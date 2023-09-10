@@ -53,6 +53,15 @@ Move the zip file and setup.sh to /var/www then execute setup.sh
 Configuration
 -----------------------
 
+Adding the following PHP functions to your php.ini files "disable_functions" array will prevent the process from executing them, minimizing access to Operating System commands:
+```
+system
+popen
+passthru
+exec
+shell_exec
+```
+
 **Want to change the default user password? You should. (tester:password123)**
 
 1. Do it manually using php:
