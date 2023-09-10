@@ -18,7 +18,7 @@ Tested for the following:
 5. PHP Wrappers and Filters.
 6. OS commands through PHP webshell; get Permission Denied page code 403. Attempted to write /tmp/test.txt with no luck.
 7. No IDOR since everyone can access the same pool of files.
-8. Not using JSON or XML, so XXE.
+8. Not using JSON or XML, so no XXE.
 9. No CGIs.
 
 MySQL is running as an unprivileged user with only SELECT rights on the database "db1". The setup.sh file will move config.php into /var/www, outside the webroot with 600 permissions for www-data. This contains the MySQL database information such as user, password, db name, and host. 
