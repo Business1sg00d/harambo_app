@@ -35,7 +35,7 @@ Install
 
 If spinning up a container or new VM, you'll need the following:
 ```
-apt-get install apache2 mysql-server php libapache2-mod-php zip unzip
+apt-get install apache2 mysql-server php libapache2-mod-php zip unzip php-mysqlnd
 ```
 
 Move the zip file and setup.sh to /var/www then execute setup.sh
