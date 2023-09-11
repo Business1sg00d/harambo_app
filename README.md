@@ -134,3 +134,9 @@ ErrorLog ${APACHE_LOG_DIR}/error.log
 ```
 systemctl restart apache2.service
 ```
+
+---------------
+Issues
+-----------------------
+
+If running in docker, may need to change config.php variable $localhost to "127.0.0.1" or you'll get "Permission Denied" errors through PHP when using the login mechanism.
