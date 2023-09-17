@@ -20,14 +20,7 @@ function check_root() {
 
 check_root
 
-# Create backup of html directory then unload contents of app into html.
-if [ ! -f "/var/www/html.bak_1.zip" ]
-then
-	echo "Backing up /var/www/html/ directory. File at /var/www/html.bak_1.zip"; echo
-	zip -r /var/www/html.bak_1.zip html/
-	unzip harambo.zip
-	rm /var/www/html/index.html
-fi
+unzip /var/www/harambo.zip
 
 # Create backup of /etc/apache2/apache2.conf, then copy secure app conf to same location. 
 if [ ! -f "/etc/apache2/apache2.conf.bak_1" ]
