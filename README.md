@@ -31,11 +31,12 @@ Right!?
 Install
 ----------
 
-**Still working on the Dockerfile and setup**
-
-For docker, use 
+**Using Docker:**
 ```
-setup_docker.sh
+git clone https://github.com/Business1sg00d/harambo_app.git
+cd harambo_app
+docker build -t image_name .
+docker run -p 80:80 -v /mnt/host_directory/:/mnt -di image_id
 ```
 
 **The install assumes mysql is running on the default TCP port 3306. It's recommended to run setup.sh as root.**
@@ -141,9 +142,3 @@ ErrorLog ${APACHE_LOG_DIR}/error.log
 ```
 systemctl restart apache2.service
 ```
-
----------------
-Issues
------------------------
-
-If running in docker, may need to change config.php variable $localhost to "127.0.0.1" or you'll get "Permission Denied" errors through PHP when using the login mechanism.
