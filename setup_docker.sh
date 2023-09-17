@@ -20,7 +20,7 @@ function check_root() {
 
 check_root
 
-unzip /var/www/harambo.zip -d /var/www/
+unzip /var/www/harambo.zip -d /var/www/ && rm /var/www/html/index.html
 
 # Create backup of /etc/apache2/apache2.conf, then copy secure app conf to same location. 
 echo "Backing up /etc/apache2/apache2.conf. File at /etc/apache2/apache2.conf.bak_1"; echo
