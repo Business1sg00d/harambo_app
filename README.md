@@ -31,6 +31,11 @@ Right!?
 Install
 ----------
 
+For docker, use 
+```
+setup_docker.sh
+```
+
 **The install assumes mysql is running on the default TCP port 3306. It's recommended to run setup.sh as root.**
 
 If spinning up a container or new VM, you'll need the following:
