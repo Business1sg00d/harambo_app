@@ -8,7 +8,7 @@ Simple
 Stupid
 ```
 
-A simple file transfer and download application. Built with security in mind. Less functionality, smaller attack surface, more secure. Slap SSL on it and you'll be good to go.
+A simple file transfer and download application. Built with security in mind. Less functionality, smaller attack surface, more secure. Slap TLS on it and you'll be good to go.
 
 Tested for the following:
 1. SQLi; both manual testing and with sqlmap up to level/risk 3.
@@ -106,7 +106,7 @@ mysql> UPDATE member SET user="new_username" WHERE userid=1;
 openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 ```
 
-2. Enable SSL for apache:
+2. Enable TLS for apache:
 ```
 a2enmod ssl
 ```
@@ -121,11 +121,11 @@ chown www-data: /var/run/apache2
 <VirtualHost *:443>
         DocumentRoot /var/www/html
         SSLEngine on
+        SSLProtocol -all +TLSv1.2 +TLSv1.3
+        SSLCipherSuite HIGH:!aNULL:!MD5
+        SSLUseStapling on
         SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
         SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
-
-        SSLUseStapling on
-
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
